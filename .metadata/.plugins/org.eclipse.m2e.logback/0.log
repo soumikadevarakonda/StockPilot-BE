@@ -639,3 +639,15 @@
 2025-11-03 07:59:53,762 [Worker-30: Launching Stock-Pilot-Backend - StockPilotBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-11-03 07:59:53,763 [Worker-30: Launching Stock-Pilot-Backend - StockPilotBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-11-03 07:59:53,768 [Worker-30: Launching Stock-Pilot-Backend - StockPilotBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Academics\3 - 1\CICD\StockPilot\Stock-Pilot-Backend\src\test\resources
+2025-11-03 08:07:19,007 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-03 08:07:19,043 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-03 08:07:19,049 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Academics\3 - 1\CICD\StockPilot\Stock-Pilot-Backend\src\test\resources
+2025-11-03 08:07:40,808 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-03 08:07:40,819 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-03 08:07:40,824 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Academics\3 - 1\CICD\StockPilot\Stock-Pilot-Backend\src\test\resources
+2025-11-03 08:09:04,567 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-03 08:09:04,580 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-03 08:09:04,586 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Academics\3 - 1\CICD\StockPilot\Stock-Pilot-Backend\src\test\resources
+2025-11-03 08:09:38,395 [Worker-42: Launching Stock-Pilot-Backend - StockPilotBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-03 08:09:38,402 [Worker-42: Launching Stock-Pilot-Backend - StockPilotBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-03 08:09:38,406 [Worker-42: Launching Stock-Pilot-Backend - StockPilotBackendApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\Academics\3 - 1\CICD\StockPilot\Stock-Pilot-Backend\src\test\resources
