@@ -5,6 +5,8 @@ import com.stockpilot.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.stockpilot.backend.util.JwtUtil;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -13,6 +15,9 @@ public class AuthController {
 
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private JwtUtil jwtUtil;
 
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
@@ -28,9 +33,15 @@ public class AuthController {
     public ResponseEntity<?> loginUser(@RequestBody User loginRequest) {
         try {
             User user = userService.loginUser(loginRequest.getEmail(), loginRequest.getPassword());
-            return ResponseEntity.ok(user);
+            String token = jwtUtil.generateToken(user.getEmail());
+            return ResponseEntity.ok(Map.of(
+                    "message", "Login successful",
+                    "token", token,
+                    "user", user
+            ));
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
         }
     }
+
 }
