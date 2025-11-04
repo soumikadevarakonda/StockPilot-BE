@@ -16,6 +16,9 @@ public class PortfolioService {
 
     @Autowired
     private PortfolioRepository portfolioRepository;
+    
+    @Autowired
+    private TransactionService transactionService;
 
     @Autowired
     private StockRepository stockRepository;
@@ -42,6 +45,8 @@ public class PortfolioService {
             portfolio.setAvgPrice(newAvgPrice);
         }
 
+        transactionService.recordTransaction(user, "BUY", quantity, price, stock);
+
         return portfolioRepository.save(portfolio);
     }
 
@@ -62,6 +67,8 @@ public class PortfolioService {
             portfolioRepository.delete(portfolio);
             return null;
         }
+        
+        transactionService.recordTransaction(user, "SELL", quantity, stock.getPrice(), stock);
 
         return portfolioRepository.save(portfolio);
     }
