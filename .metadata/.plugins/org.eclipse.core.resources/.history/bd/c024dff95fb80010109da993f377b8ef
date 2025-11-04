@@ -1,5 +1,0 @@
-package com.stockpilot.backend.util;
-
-public class JwtUtil {
-
-}

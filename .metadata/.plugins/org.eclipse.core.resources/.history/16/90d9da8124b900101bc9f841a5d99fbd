@@ -1,5 +1,0 @@
-package com.stockpilot.backend.repository;
-
-public class PortfolioRepository {
-
-}
