@@ -79,7 +79,6 @@ INDEX VERSION 1.134+D:\Academics\3 - 1\CICD\StockPilot\.metadata\.plugins\org.ec
 2477658924.index
 2650132854.index
 575542947.index
-2715875719.index
 4066386513.index
 766502013.index
 1224864757.index
