@@ -19,12 +19,42 @@ public class Stock {
     @Column(nullable = false)
     private Double price;
 
+    @Column(nullable = false)
+    private String sector;
+
     public Stock() {}
 
     public Stock(String symbol, String name, Double price) {
         this.symbol = symbol;
         this.name = name;
         this.price = price;
+        this.sector = assignSector(symbol);
+    }
+
+    // Helper method to assign sector automatically
+    private String assignSector(String symbol) {
+        if (symbol == null) return "Misc";
+        switch (symbol.toUpperCase()) {
+            case "AAPL":
+            case "TCS":
+            case "INFY":
+                return "Tech";
+            case "TSLA":
+                return "Auto";
+            case "RELIANCE":
+                return "Energy";
+            case "HDFC":
+            case "ICICIBANK":
+                return "Finance";
+            case "HINDUNILVR":
+                return "FMCG";
+            case "SUNPHARMA":
+                return "Pharma";
+            case "AMZN":
+                return "E-Commerce";
+            default:
+                return "Misc";
+        }
     }
 
     // Getters & Setters
@@ -42,6 +72,7 @@ public class Stock {
 
     public void setSymbol(String symbol) {
         this.symbol = symbol;
+        this.sector = assignSector(symbol); // Auto-update sector if symbol changes
     }
 
     public String getName() {
@@ -58,5 +89,13 @@ public class Stock {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getSector() {
+        return sector;
+    }
+
+    public void setSector(String sector) {
+        this.sector = sector;
     }
 }
