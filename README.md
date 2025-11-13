@@ -124,5 +124,5 @@ This repository contains the **Spring Boot backend** APIs powering the system.
 
 ```bash
 git clone https://github.com/soumikadevarakonda/StockPilot-BE.git
-cd Stock-Pilot-Backend
+cd StockPilot-BE
 ```
