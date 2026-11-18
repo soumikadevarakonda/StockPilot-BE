@@ -24,8 +24,12 @@ public class PortfolioController {
         try {
             String email = (String) payload.get("email");
             String symbol = (String) payload.get("symbol");
-            int quantity = (int) payload.get("quantity");
+            Number quantityValue = (Number) payload.get("quantity");
+            int quantity = quantityValue.intValue();
+            if (quantity <= 0) throw new RuntimeException("Quantity must be greater than zero");
+            if (quantityValue.doubleValue() != quantity) throw new RuntimeException("Quantity must be a whole number");
             double price = ((Number) payload.get("price")).doubleValue();
+            if (price <= 0) throw new RuntimeException("Price must be greater than zero");
 
             portfolioService.buyStock(email, symbol, quantity, price);
 
@@ -45,7 +49,10 @@ public class PortfolioController {
         try {
             String email = (String) payload.get("email");
             String symbol = (String) payload.get("symbol");
-            int quantity = (int) payload.get("quantity");
+            Number quantityValue = (Number) payload.get("quantity");
+            int quantity = quantityValue.intValue();
+            if (quantity <= 0) throw new RuntimeException("Quantity must be greater than zero");
+            if (quantityValue.doubleValue() != quantity) throw new RuntimeException("Quantity must be a whole number");
 
             portfolioService.sellStock(email, symbol, quantity);
 

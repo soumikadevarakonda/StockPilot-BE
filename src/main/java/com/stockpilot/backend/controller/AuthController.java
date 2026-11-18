@@ -19,6 +19,24 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @GetMapping("/profile")
+    public ResponseEntity<?> getProfile(@RequestHeader(value = "Authorization", required = false) String authorization) {
+        if (authorization == null || !authorization.startsWith("Bearer ")) {
+            return ResponseEntity.status(401).body(Map.of("error", "Unauthorized"));
+        }
+        try {
+            String token = authorization.substring(7);
+            String email = jwtUtil.extractEmail(token);
+            var user = userService.findByEmail(email);
+            if (user.isPresent()) {
+                return ResponseEntity.ok(user.get());
+            }
+            return ResponseEntity.status(404).body(Map.of("error", "User not found"));
+        } catch (Exception e) {
+            return ResponseEntity.status(401).body(Map.of("error", "Invalid token"));
+        }
+    }
+
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
         try {

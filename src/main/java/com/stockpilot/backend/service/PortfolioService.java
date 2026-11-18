@@ -27,6 +27,8 @@ public class PortfolioService {
     private UserRepository userRepository;
 
     public Portfolio buyStock(String email, String symbol, int quantity, double price) {
+        if (quantity <= 0) throw new RuntimeException("Quantity must be greater than zero");
+        if (price <= 0) throw new RuntimeException("Price must be greater than zero");
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
         Stock stock = stockRepository.findBySymbol(symbol);
@@ -51,6 +53,7 @@ public class PortfolioService {
     }
 
     public Portfolio sellStock(String email, String symbol, int quantity) {
+        if (quantity <= 0) throw new RuntimeException("Quantity must be greater than zero");
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
         Stock stock = stockRepository.findBySymbol(symbol);
@@ -64,6 +67,7 @@ public class PortfolioService {
         portfolio.setQuantity(portfolio.getQuantity() - quantity);
 
         if (portfolio.getQuantity() == 0) {
+            transactionService.recordTransaction(user, "SELL", quantity, stock.getPrice(), stock);
             portfolioRepository.delete(portfolio);
             return null;
         }
