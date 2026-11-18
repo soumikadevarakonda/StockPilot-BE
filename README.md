@@ -108,6 +108,14 @@ This repository contains the **Spring Boot backend** APIs powering the system.
 
 ---
 
+## 🌐 Deployment
+
+- Backend API: https://stockpilot-backend-1qox.onrender.com
+- Frontend: https://stockpilot-one-sigma.vercel.app
+- Database: Neon PostgreSQL
+
+---
+
 ## 🧠 Future Enhancements
 
 * ✅ JWT-based route protection (only logged-in users access portfolio)
