@@ -10,7 +10,10 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-	private final String SECRET_KEY = "pD9x!qW3zL8mT6rF2nV5yB1cJ4sK7eG9tR0aZ8xY";
+    private final String SECRET_KEY = System.getenv().getOrDefault(
+            "JWT_SECRET",
+            "pD9x!qW3zL8mT6rF2nV5yB1cJ4sK7eG9tR0aZ8xY"
+    );
     private final long EXPIRATION_TIME = 1000 * 60 * 60 * 10; // 10 hours
 
     private Key getSigningKey() {
